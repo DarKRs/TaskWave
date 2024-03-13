@@ -8,11 +8,11 @@ using TaskWave.Domain.Interfaces.IRepositories;
 
 namespace TaskWave.Infrastructure.Repositories
 {
-    public class Repository<T> : IBaseRepository<T> where T : class
+    public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         protected readonly DbContext _context;
 
-        public Repository(DbContext context)
+        public BaseRepository(DbContext context)
         {
             _context = context;
         }
