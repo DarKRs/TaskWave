@@ -1,8 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using TaskWave.Domain.Entities;
 
 namespace TaskWave.Infrastructure.Data
