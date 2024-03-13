@@ -10,6 +10,11 @@ namespace TaskWave.Infrastructure.Data
         public DbSet<Project> Projects { get; set; }
         public DbSet<Team> Teams { get; set; }
 
+        public TaskManagementContext(DbContextOptions<TaskManagementContext> options)
+            : base(options)
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql(@"Host=localhost;Database=TaskManagementDb;Username=postgres;Password=postgres");

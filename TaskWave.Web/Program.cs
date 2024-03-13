@@ -1,9 +1,14 @@
+using Microsoft.EntityFrameworkCore;
 using TaskWave.Domain.Interfaces.IRepositories;
 using TaskWave.Domain.Interfaces.IServices;
+using TaskWave.Infrastructure.Data;
 using TaskWave.Infrastructure.Repositories;
 using TaskWave.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<TaskManagementContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

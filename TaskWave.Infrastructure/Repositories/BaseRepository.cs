@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TaskWave.Domain.Interfaces.IRepositories;
+using TaskWave.Infrastructure.Data;
 
 namespace TaskWave.Infrastructure.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
-        protected readonly DbContext _context;
+        protected readonly TaskManagementContext _context;
 
-        public BaseRepository(DbContext context)
+        public BaseRepository(TaskManagementContext context)
         {
             _context = context;
         }
