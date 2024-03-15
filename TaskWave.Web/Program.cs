@@ -14,8 +14,8 @@ builder.Services.AddDbContext<TaskManagementContext>(options =>
 builder.Services.AddControllersWithViews();
 
 // Регистрация репозитория
-builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
+builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
 // Регистрация сервисов
 builder.Services.AddScoped<ITaskService, TaskService>();

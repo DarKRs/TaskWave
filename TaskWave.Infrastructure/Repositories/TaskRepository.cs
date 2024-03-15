@@ -13,7 +13,7 @@ namespace TaskWave.Infrastructure.Repositories
 
         public async Task<ProjectTask> GetTaskByIdWithProjectAsync(int id)
         {
-            return await _context.Tasks.Include(t => t.Project).FirstOrDefaultAsync(t => t.Id == id);
+            return await _context.Tasks.Include(t => t.Project).FirstOrDefaultAsync(t => t.TaskId == id);
         }
     }
 }

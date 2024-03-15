@@ -6,9 +6,9 @@ namespace TaskWave.Infrastructure.Services
 {
     public class TaskService : ITaskService
     {
-        private readonly IBaseRepository<ProjectTask> _taskRepository;
+        private readonly ITaskRepository _taskRepository;
 
-        public TaskService(IBaseRepository<ProjectTask> taskRepository)
+        public TaskService(ITaskRepository taskRepository)
         {
             _taskRepository = taskRepository;
         }
@@ -21,6 +21,11 @@ namespace TaskWave.Infrastructure.Services
         public async Task<ProjectTask> GetTaskByIdAsync(int id)
         {
             return await _taskRepository.GetByIdAsync(id);
+        }
+
+        public async Task<ProjectTask> GetTaskByIdWithProjectAsync(int id)
+        {
+            return await _taskRepository.GetTaskByIdWithProjectAsync(id);
         }
 
         public async Task<ProjectTask> CreateTaskAsync(ProjectTask task)
@@ -38,5 +43,6 @@ namespace TaskWave.Infrastructure.Services
         {
             await _taskRepository.DeleteAsync(id);
         }
+
     }
 }

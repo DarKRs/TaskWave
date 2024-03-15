@@ -6,6 +6,7 @@ namespace TaskWave.Domain.Interfaces.IServices
     {
         Task<IEnumerable<ProjectTask>> GetAllTasksAsync();
         Task<ProjectTask> GetTaskByIdAsync(int id);
+        Task<ProjectTask> GetTaskByIdWithProjectAsync(int id);
         Task<ProjectTask> CreateTaskAsync(ProjectTask task);
         Task UpdateTaskAsync(ProjectTask task);
         Task DeleteTaskAsync(int id);
