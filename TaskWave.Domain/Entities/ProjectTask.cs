@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TaskWave.Domain.Entities
 {
@@ -6,6 +7,7 @@ namespace TaskWave.Domain.Entities
     {
         [Key]
         public int TaskId { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
         public int ProjectId { get; set; }
         public Project Project { get; set; }
