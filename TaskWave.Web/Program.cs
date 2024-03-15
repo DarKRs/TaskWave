@@ -15,6 +15,7 @@ builder.Services.AddControllersWithViews();
 
 // Регистрация репозитория
 builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 
 // Регистрация сервисов
 builder.Services.AddScoped<ITaskService, TaskService>();
