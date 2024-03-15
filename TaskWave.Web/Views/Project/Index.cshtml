@@ -1,0 +1,14 @@
+﻿@model IEnumerable<TaskWave.Domain.Entities.Project>
+
+<h2>Projects</h2>
+
+<ul>
+    @foreach (var project in Model)
+    {
+        <li>
+            @Html.ActionLink(project.Name, "Details", new { id = project.ProjectId })
+        </li>
+    }
+</ul>
+
+@Html.ActionLink("Create New Project", "Create")
