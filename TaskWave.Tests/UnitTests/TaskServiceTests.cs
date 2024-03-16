@@ -30,6 +30,7 @@ namespace TaskWave.Tests.UnitTests
             var fakeTasks = new List<ProjectTask>
             {
                 new ProjectTask { TaskId = 1, Name = "Test Task 1", Description = "Description 1" },
+                new ProjectTask { TaskId = 2, Name = "Test Task 2", Description = "Description 2" },
                 new ProjectTask { TaskId = 2, Name = "Test Task 2", Description = "Description 2" }
             };
             _mockRepository.Setup(repo => repo.GetAllAsync()).ReturnsAsync(fakeTasks);
