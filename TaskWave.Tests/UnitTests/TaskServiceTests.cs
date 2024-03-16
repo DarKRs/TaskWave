@@ -40,7 +40,7 @@ namespace TaskWave.Tests.UnitTests
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.That(result.Count(), Is.EqualTo(2));
+            Assert.That(result.Count(), Is.EqualTo(3));
             _mockRepository.Verify(repo => repo.GetAllAsync(), Times.Once);
         }
     }
